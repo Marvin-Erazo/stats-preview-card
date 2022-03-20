@@ -1,0 +1,220 @@
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+//color css variables
+:root{
+    --page-bg: hsl(233, 47%, 7%);
+    --card-bg: hsl(244,38%,16%);
+    --accent-w: hsl(277,64%,61%); //accent words
+    --title-font-color: hsl(0, 0%, 100%);; //header title and stats <b>
+    --paragraph-font-color: hsla(0, 0%, 100%, 0.75);
+    --stats-font-color: hsla(0, 0%, 100%, 0.6); //for stats description <p>
+    --inter-font: 'Inter', sans-serif;
+    --lexend-font: 'Lexend Deca', sans-serif;
+}
+
+//global rules
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--page-bg);
+}
+//First Desktop Desing
+
+//Content rules
+main{
+    width: 100%;
+    height: 100vh;
+
+    //only for center the content for this challenge
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //give dimensions to the card
+
+    .stats{
+        width: 60%;
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        /*
+        display flex for create 2 asides rigth for the image and left for the text content
+        for mobile i delete the flex content to position the asides up an down\
+        */
+        display: flex;
+        flex-direction: row-reverse;
+
+        .company-stats{
+            padding: 60px 60px;
+            width: 50%;
+            float: left;
+            .stats-description{
+                font-family: var(--inter-font);
+
+                h1{
+                    color: var(--title-font-color);
+                    margin-bottom: 20px;
+                    font-size: 1.9rem;
+                    font-weight: 700;
+
+                    a{
+                        text-decoration: none;
+                        color: var(--accent-w);
+                    }
+                }
+
+                p{
+                    color: var(--paragraph-font-color);
+                    font-size: 0.8rem;
+                    line-height: 1.3rem;
+                    font-weight: 400;
+                    margin-bottom: 60px;
+                }
+            }
+
+            ul{
+                display: flex;
+                list-style: none;
+                
+                li{
+                    
+                    margin-right: 30px;
+
+                    b{
+                        font-family: var(--inter-font);
+                        color: var(--title-font-color);
+                        font-size: 1.2rem;
+                    }
+
+                    p{
+                        margin-top: 5px;
+                        color: var(--stats-font-color);
+                        font-family: var(--lexend-font);
+                        font-size: .7rem;
+                    }
+                }
+            }
+        }
+
+        .company-img{
+            float: right;
+            width: 50%;
+            border-radius: 0px 10px 10px 0px;
+            //you can use lienar gradient to give a color hover effect to the image
+            background-image:
+                linear-gradient(rgba(110, 20, 161, 0.5)),
+                url("images/image-header-desktop.jpg")
+            ;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            
+        }
+    }
+}
+
+footer{
+    position: fixed;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    color: var(--paragraph-font-color);
+    font-family: var(--inter-font);
+    font-size: .7rem;
+
+    a{
+        text-decoration: none;
+        color: var(--accent-w);
+    }
+}
+
+//laptop 1024px
+
+@media screen and (max-width: 1024px) {
+    main{
+        .stats{
+            width: 80%;
+        }
+    }
+}
+
+//tables 768px
+//the background image doesen't cover the div
+
+@media screen and (max-width: 768px) {
+    main{
+        .stats{
+            width: 90%;
+
+            .company-img{
+                background-image:
+                    linear-gradient(rgba(110, 20, 161, 0.5)),
+                    url("images/image-header-desktop.jpg")
+                ;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+//mobile L 425px
+
+@media screen and (max-width: 426px) {
+    main{
+        height: max-content;
+
+        .stats{
+            width: 80%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            height: max-content;
+
+            //put the aside div up and down
+            flex-direction: column;
+            text-align: center;
+
+            .company-img{
+                width: 100%;
+                height: 180px;
+                background-image:
+                    linear-gradient(rgba(110, 20, 161, 0.5)),
+                    url("images/image-header-mobile.jpg")
+                ;
+                border-radius: 10px 10px 0px 0px;
+            }
+
+            .company-stats{
+                width: 100%;
+                padding: 20px 30px 0px 30px;
+
+                .stats-description{
+
+                    h1{
+                        font-size: 1.6rem;
+                        margin-bottom: 10px;
+                    }
+
+                    p{
+                        margin-bottom: 30px;
+                    }
+                }
+
+                ul{
+                    flex-direction: column;
+
+                    li{
+                        margin-right: 0px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+
+        }
+    }
+
+}
