@@ -20,14 +20,17 @@ Stats preview card created with HTML and SASS
 
 Mobile 
 
+![stats-previw-card-mobile](https://user-images.githubusercontent.com/90436675/159168740-a3f2db5d-bf15-4703-857d-2a39ead6683b.png)
+
 
 Desktop
 
+![stats-previw-card-desktop](https://user-images.githubusercontent.com/90436675/159168733-97d77b00-26fc-4885-a52a-2cbf83fa2898.png)
 
 ### Links
 
 - Solution URL: https://github.com/Marvin-Erazo/stats-preview-card
-- Live Site URL: 
+- Live Site URL: https://stats-card-me.netlify.app/
 
 ## My process
 
